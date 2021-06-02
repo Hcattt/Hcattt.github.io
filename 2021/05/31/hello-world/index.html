@@ -487,129 +487,129 @@
 <p>用户名：root</p>
 <p>密码：123456</p>
 <p>Linux 查询 IP 地址</p>
-<pre><code>ifconfig
+<pre class=" language-java"><code class="language-java">ifconfig
 </code></pre>
 <h1 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h1><p>1、删除 CentOS 自带的 OpenJDK</p>
 <p>2、通过 Xftp 将安装包拷贝到 CentOS 中</p>
 <p>3、通过命令安装 JDK</p>
-<pre><code>rpm -ivh jdk-8u221-linux-x64.rpm
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh jdk<span class="token operator">-</span>8u221<span class="token operator">-</span>linux<span class="token operator">-</span>x64<span class="token punctuation">.</span>rpm
 </code></pre>
 <p>4、配环境变量</p>
-<pre><code>JAVA_HOME=/usr/java/jdk/jdk1.8.0_221-amd64
-CLASSPATH=%JAVA_HOME%/lib:%JAVA_HOME%/jre/lib
-PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+<pre class=" language-java"><code class="language-java">JAVA_HOME<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>java<span class="token operator">/</span>jdk<span class="token operator">/</span>jdk1<span class="token number">.8</span><span class="token punctuation">.</span>0_221<span class="token operator">-</span>amd64
+CLASSPATH<span class="token operator">=</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>lib<span class="token operator">:</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>jre<span class="token operator">/</span>lib
+PATH<span class="token operator">=</span>$PATH<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>bin<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>jre<span class="token operator">/</span>bin
 export PATH CLASSPATH JAVA_HOME
 </code></pre>
 <p>5、让配置生效</p>
-<pre><code>source /etc/profile
+<pre class=" language-java"><code class="language-java">source <span class="token operator">/</span>etc<span class="token operator">/</span>profile
 </code></pre>
 <h1 id="Java-Web-应用"><a href="#Java-Web-应用" class="headerlink" title="Java Web 应用"></a>Java Web 应用</h1><p>1、配置 Tomcat</p>
 <p>2、解压缩</p>
-<pre><code>tar -zxvf apache-tomcat-9.0.34.tar.gz
+<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>zxvf apache<span class="token operator">-</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token punctuation">.</span><span class="token number">34</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 </code></pre>
 <p>3、启动 Tomcat</p>
-<pre><code>./startup.sh
+<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/startup<span class="token punctuation">.</span>sh
 </code></pre>
 <p>4、CentOS 开放 8080 端口</p>
 <ul>
 <li>检查防火墙状态</li>
 </ul>
-<pre><code>firewall-cmd --state
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state
 </code></pre>
 <p>running 表示防火墙是开启的，如果你看到的是 not running，防火墙关闭，需要开启</p>
-<pre><code>systemctl restart firewalld.service
+<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
 </code></pre>
 <ul>
 <li>开放 8080 端口</li>
 </ul>
-<pre><code>firewall-cmd --zone=public --add-port=8080/tcp --permanent
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
 </code></pre>
 <ul>
 <li>重启防火墙</li>
 </ul>
-<pre><code>systemctl restart firewalld.service
+<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
 </code></pre>
 <ul>
 <li>重新载入配置</li>
 </ul>
-<pre><code>firewall-cmd --reload
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
 </code></pre>
 <h1 id="部署-Spring-Boot-应用"><a href="#部署-Spring-Boot-应用" class="headerlink" title="部署 Spring Boot 应用"></a>部署 Spring Boot 应用</h1><p>IDEA 启动 Spring Boot ，将 Spring Boot 应用打成 jar，通过命令行部署。</p>
-<pre><code>java -jar xxx.jar
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar xxx<span class="token punctuation">.</span>jar
 </code></pre>
 <p>1、将 Spring Boot 应用打包，jar，Maven</p>
 <p>2、通过命令行启动 jar 即可</p>
-<pre><code>java -jar demo.jar
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
 </code></pre>
 <h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><p>1、通过 Xftp 将 MySQL 安装包拷贝到 Linux</p>
 <p>2、解压缩</p>
-<pre><code>tar -xvf mysql-8.0.20-1.el7.x86_64.rpm-bundle.tar 
+<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>xvf mysql<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm<span class="token operator">-</span>bundle<span class="token punctuation">.</span>tar 
 </code></pre>
 <p>3、安装 common、libs、client、server</p>
 <p>4、删除自带的 mariadb</p>
-<pre><code>rpm -e mariadb-libs-5.5.44-2.el7.centos.x86_64 --nodeps
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>e mariadb<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">44</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>centos<span class="token punctuation">.</span>x86_64 <span class="token operator">--</span>nodeps
 </code></pre>
 <p>5、安装命令行</p>
-<pre><code>rpm -ivh mysql-community-common-8.0.20-1.el7.x86_64.rpm --nodeps --force
-rpm -ivh mysql-community-libs-8.0.20-1.el7.x86_64.rpm --nodeps --force
-rpm -ivh mysql-community-client-8.0.20-1.el7.x86_64.rpm --nodeps --force
-rpm -ivh mysql-community-server-8.0.20-1.el7.x86_64.rpm --nodeps --force
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>common<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>client<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>server<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
 </code></pre>
 <p>6、初始化 MySQL</p>
-<pre><code>mysqld --initialize
+<pre class=" language-java"><code class="language-java">mysqld <span class="token operator">--</span>initialize
 </code></pre>
 <p>7、授权防火墙</p>
-<pre><code>chown mysql:mysql /var/lib/mysql -R;
-systemctl start mysqld.service;
-systemctl enable mysqld;
+<pre class=" language-java"><code class="language-java">chown mysql<span class="token operator">:</span>mysql <span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql <span class="token operator">-</span>R<span class="token punctuation">;</span>
+systemctl start mysqld<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
+systemctl enable mysqld<span class="token punctuation">;</span>
 </code></pre>
 <p>8、查看数据库的初始化密码</p>
-<pre><code>cat /var/log/mysqld.log | grep password
+<pre class=" language-java"><code class="language-java">cat <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>mysqld<span class="token punctuation">.</span>log <span class="token operator">|</span> grep password
 </code></pre>
 <p>9、登录数据库</p>
-<pre><code>mysql -uroot -p
+<pre class=" language-java"><code class="language-java">mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p
 </code></pre>
 <p>10、修改密码</p>
-<pre><code>ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;root&#39;;
+<pre class=" language-java"><code class="language-java">ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'root'</span><span class="token punctuation">;</span>
 </code></pre>
 <p>11、使用新密码登录</p>
 <p>12、开启远程访问</p>
-<pre><code>create user &#39;root&#39;@&#39;%&#39; identified with mysql_native_password by &#39;root&#39;;
-grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; with grant option;
-flush privileges;
+<pre class=" language-java"><code class="language-java">create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'root'</span><span class="token punctuation">;</span>
+grant all privileges on <span class="token operator">*</span><span class="token punctuation">.</span>* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
 </code></pre>
 <p>13、开放 3306 端口</p>
-<pre><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent
-systemctl restart firewalld.service
-firewall-cmd --reload
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">3306</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
+systemctl restart firewalld<span class="token punctuation">.</span>service
+firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
 </code></pre>
 <p>14、MySQL 安装默认使用美国的时区，北京时间比美国晚 8 小时</p>
-<pre><code>set global time_zone=&#39;+8:00&#39;;
+<pre class=" language-java"><code class="language-java">set global time_zone<span class="token operator">=</span><span class="token string">'+8:00'</span><span class="token punctuation">;</span>
 </code></pre>
 <p>15、创建数据表</p>
-<pre><code>create database test character set utf8 collate utf8_general_ci;
-use test;
-create table user(
-    id int primary key auto_increment,
-    name varchar(22),
+<pre class=" language-java"><code class="language-java">create database test character set utf8 collate utf8_general_ci<span class="token punctuation">;</span>
+use test<span class="token punctuation">;</span>
+create table <span class="token function">user</span><span class="token punctuation">(</span>
+    id <span class="token keyword">int</span> primary key auto_increment<span class="token punctuation">,</span>
+    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     birthday datetime
-);
-insert into user(name, birthday) VALUES (&#39;小明&#39;,&#39;1999-01-01&#39;);
-insert into user(name, birthday) VALUES (&#39;小红&#39;,&#39;2000-01-01&#39;);
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token string">'1999-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token string">'2000-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>war jar</p>
 <p>如果你使用的是 SSM 或者 Java WEB（非 Spring Boot）需要通过 war 包进行部署，先把你的应用打成 war 包，丢到外置的 Tomcat 中，启动 Tomcat 服务，进而访问你的应用。</p>
 <p>如果你使用的是 Spring Boot，内置了 Tomcat，直接用 jar 部署，使用命令启动即可</p>
-<pre><code>java -jar demo.jar
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
 </code></pre>
-<h1 id="centOS运行spring-boot程序"><a href="#centOS运行spring-boot程序" class="headerlink" title="centOS运行spring boot程序"></a>centOS运行spring boot程序</h1><pre><code>java -jar work3-0.0.1-SNAPSHOT.jar
-java -jar work3-0.0.1-SNAPSHOT.jar --server.port=80 #指定在80端口运行
-ctrl + c 停止运行
+<h1 id="centOS运行spring-boot程序"><a href="#centOS运行spring-boot程序" class="headerlink" title="centOS运行spring boot程序"></a>centOS运行spring boot程序</h1><pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar
+java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">--</span>server<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">80</span> #指定在<span class="token number">80</span>端口运行
+ctrl <span class="token operator">+</span> c 停止运行
 </code></pre>
 <p>后台运行</p>
 <p>1 starpup.sh  (启动)</p>
-<pre><code>#!bin/sh
-nohup java -jar /usr/local/java/myproject/work3-0.0.1-SNAPSHOT.jar &amp;         
+<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span>bin<span class="token operator">/</span>sh
+nohup java <span class="token operator">-</span>jar <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>java<span class="token operator">/</span>myproject<span class="token operator">/</span>work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">&amp;</span>         
 </code></pre>
 <p>2 关闭进程stop.sh</p>
 <pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
@@ -628,16 +628,16 @@ ps <span class="token operator">-</span>ef<span class="token operator">|</span>g
 kill  pid
 </code></pre>
 <p>3 重启服务  reboot.sh</p>
-<pre><code>#!/bin/bash
+<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
 echo stop application
-source stop.sh
+source stop<span class="token punctuation">.</span>sh
 echo start application
-source startup.sh
+source startup<span class="token punctuation">.</span>sh
 </code></pre>
 <p>4 添加可执行权限</p>
-<pre><code>chmod +x start.sh
-chmod +x stop.sh
-chmod +x run.sh
+<pre class=" language-java"><code class="language-java">chmod <span class="token operator">+</span>x start<span class="token punctuation">.</span>sh
+chmod <span class="token operator">+</span>x stop<span class="token punctuation">.</span>sh
+chmod <span class="token operator">+</span>x run<span class="token punctuation">.</span>sh
 </code></pre>
 <p>5  netstat -ntpl|grep java   查看正在运行</p>
 <p>6 firewall-cmd –list-ports 防火墙开启的端口号</p>
