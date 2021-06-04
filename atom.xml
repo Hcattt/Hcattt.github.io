@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-02T10:19:07.457Z</updated>
+  <updated>2021-06-04T02:48:46.623Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nginx部署前后端分离</title>
+    <link href="http://hcattt.github.io/2021/06/04/nginx-bu-shu-qian-hou-duan-fen-chi/"/>
+    <id>http://hcattt.github.io/2021/06/04/nginx-bu-shu-qian-hou-duan-fen-chi/</id>
+    <published>2021-06-04T01:29:54.000Z</published>
+    <updated>2021-06-04T02:48:46.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;一-，准备工作&quot;&gt;&lt;a href=&quot;#一-，准备工作&quot; class=&quot;headerlink&quot; title=&quot;一 ，准备工作&quot;&gt;&lt;/a&gt;一 ，准备工作&lt;/h1&gt;&lt;p&gt;1，把你vue项目中axios的数据地址修改成你的后端项目发布地址!&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="nginx" scheme="http://hcattt.github.io/tags/nginx/"/>
+    
+    <category term="vue" scheme="http://hcattt.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nginx入门</title>
     <link href="http://hcattt.github.io/2021/06/02/nginx-ru-men/"/>
     <id>http://hcattt.github.io/2021/06/02/nginx-ru-men/</id>
     <published>2021-06-02T10:10:21.000Z</published>
-    <updated>2021-06-02T10:19:07.457Z</updated>
+    <updated>2021-06-04T01:31:50.624Z</updated>
     
     
       

@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>nginx部署前后端分离</title>
+      <link href="2021/06/04/nginx-bu-shu-qian-hou-duan-fen-chi/"/>
+      <url>2021/06/04/nginx-bu-shu-qian-hou-duan-fen-chi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-，准备工作"><a href="#一-，准备工作" class="headerlink" title="一 ，准备工作"></a>一 ，准备工作</h1><p>1，把你vue项目中axios的数据地址修改成你的后端项目发布地址!</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622770617878.png" alt="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622770617878.png"></p><p>2，在控制台 执行 npm run serve和npm run build，确保程序无误会生成一个dist文件夹</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622770857437.png" alt="1622770857437"></p><p>3，把这个文件夹通过xshell+sftp丢到你的服务器中</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622771835274.png" alt="1622771835274"></p><h1 id="二，配置你的nginx"><a href="#二，配置你的nginx" class="headerlink" title="二，配置你的nginx"></a>二，配置你的nginx</h1><p>1，看看你的nginx装在了那里 whereis nginx，进入（如果没有安装nginx，可以看看我的其他博客）</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622772174267.png" alt="1622772174267"></p><p>2 ，然后用 vi编辑器编辑nginx.conf这个文件，添加相应配置</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622772316991.png" alt="1622772316991"></p><p>配置上游服务器：</p><pre class=" language-java"><code class="language-java">upstream fruit<span class="token punctuation">{</span>        server <span class="token number">120.26</span><span class="token punctuation">.</span><span class="token number">199.203</span><span class="token operator">:</span><span class="token number">8181</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span></code></pre><p> server 中配置转发规则：</p><pre class=" language-yml"><code class="language-yml"> location / {            proxy_pass http://fruit;            proxy_redirect default;        }</code></pre><p>配置静态资源访问，root是你的dist位置</p><pre class=" language-yml"><code class="language-yml">location ~ .*\.(js|css|ico|png|jpg|eot|svg|ttf|woff|html|txt|pdf|) {          root /usr/local/java/vueproject/fruit/dist/;#所有静态文件直接读取硬盘          expires 30d; #缓存30天         </code></pre><p>3   重新加载配置文件，启动nginx</p><pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s reload  重新加载配置文件</code></pre><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622772795929.png" alt="1622772795929"></p><p>4 确保开放防火墙开启端口80</p><pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>list<span class="token operator">-</span>all</code></pre><h1 id="三，外部浏览器访问"><a href="#三，外部浏览器访问" class="headerlink" title="三，外部浏览器访问"></a>三，外部浏览器访问</h1><p>浏览器输入你的IP/index.html</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/nginx/1622773063685.png" alt="1622773063685"></p><h3 id="谢谢观看，如有问题，欢迎指正"><a href="#谢谢观看，如有问题，欢迎指正" class="headerlink" title="谢谢观看，如有问题，欢迎指正"></a>谢谢观看，如有问题，欢迎指正</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> nginx </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nginx入门</title>
       <link href="2021/06/02/nginx-ru-men/"/>
       <url>2021/06/02/nginx-ru-men/</url>
