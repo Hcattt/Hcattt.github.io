@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>cookie与session的前生今世</title>
+      <link href="2021/06/05/cookie-yu-session-de-qian-sheng-jin-shi/"/>
+      <url>2021/06/05/cookie-yu-session-de-qian-sheng-jin-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="浅谈Session与Cookie的关系"><a href="#浅谈Session与Cookie的关系" class="headerlink" title="浅谈Session与Cookie的关系"></a>浅谈Session与Cookie的关系</h2><p>HTTP是无状态协议，对于事务处理没有记忆能力，每次客服端和服务端完成会话时，服务端不会存储任何会话信息，每个请求都是完全独立的，服务端无法确认当前访问者的身份信息，无法分辨上一次请求发送者和这一次发送者是不是一个人。</p><p><img src="https://gitee.com/maoshencat/imgpng/raw/master/cookie%E4%B8%8Esession/merged_1622896410290.jpg" alt="img"></p><p>so，服务器与浏览器为了进行会话跟踪（知道谁在访问我），就必须主动去维护一个状态，这个状态用于告知服务器端前后两个请求是否来自同一个来源，而这个状态需就要通过Cookie或者是Session去实现啦。</p><p>Cookie是一个非常具体的东西，指的是浏览器里面存储的一种数据，仅仅是浏览器实现的一种数据存储的功能，Cookie由服务器生成发送给浏览器，浏览器吧Cookie以key—value形式保存到浏览器中，下一次请求同意服务时，会把cookie发送给服务器，由于Cookie是存储在客户端上的，所以浏览器加入了一些限制，确保Cookie不会被恶意使用，同时不会占太多的磁盘空间，所以每个遇到的Cookie数量是有限的。</p><p>Session从字面上讲就是会话，服务器要知道当前发送请求给自己的是谁，为了做这种区分，服务器就要给每个客户端分配不同的“身份标识”，然后客户端每次向服务器发送请求的时候，都带上这个身份标识，服务器就知道这个请求来自于谁了，至于客户端怎么保存这个身份标识，可有很多种方式，对于浏览器客户端大家都默认使用Cookie的方式，服务器使用session把用户的信息临时保存在服务器上，用户离开网站后Session会被销毁，这种用户信息存储方式相对Cookie来说更加安全，可是session有一个缺陷，如果web服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候Session就会丢失。</p><p>Cookie和Session的区别：</p><p>1，安全性：session比cookie安全，session是存储在服务器端的，cookie是存储在客户端的</p><p>2，存储值的类型不同：cookie只支持存字符串数据，想要设置其他类型的数据需要将其转换为字符串，而session可以存任意类型的数据类型</p><p>3，有效期不同：Cookie可设置为长时间保持，比如经常使用的默认登录功能，Session一般失效时间短，客户端关闭(默认情况下)或者超市都会失效</p><p>4，存储大小不同：单个Cookie保存的数据不能超过4K，Session可存储数据远高于Cookie，但是当访问量过多，会占用过多服务器资源。</p><p><strong>不管是cookie还是session，都是建立在安全性的大前提下，session中不仅仅有cookie的信息，同时会有该用户的相关重要且安全的信息存储，所以session是在服务器的，而cookie只是服务器将一些不重要的信息拿出来丢给客户的存在，以备以后快速匹配校验用</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> cookie </tag>
+            
+            <tag> session </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>spring mvc详解</title>
       <link href="2021/06/05/spring-mvc-xiang-jie/"/>
       <url>2021/06/05/spring-mvc-xiang-jie/</url>
