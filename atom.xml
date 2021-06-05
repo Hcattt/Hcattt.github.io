@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-04T02:48:46.623Z</updated>
+  <updated>2021-06-05T07:32:05.232Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring mvc详解</title>
+    <link href="http://hcattt.github.io/2021/06/05/spring-mvc-xiang-jie/"/>
+    <id>http://hcattt.github.io/2021/06/05/spring-mvc-xiang-jie/</id>
+    <published>2021-06-05T06:13:16.000Z</published>
+    <updated>2021-06-05T07:32:05.232Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Spring-MVC&quot;&gt;&lt;a href=&quot;#Spring-MVC&quot; class=&quot;headerlink&quot; title=&quot;Spring MVC&quot;&gt;&lt;/a&gt;Spring MVC&lt;/h3&gt;&lt;p&gt;Spring MVC 是目前主流的实现 MVC</summary>
+        
+      
+    
+    
+    
+    
+    <category term="springmvc" scheme="http://hcattt.github.io/tags/springmvc/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx部署前后端分离</title>
