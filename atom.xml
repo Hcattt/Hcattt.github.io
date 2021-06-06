@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-05T13:15:41.385Z</updated>
+  <updated>2021-06-06T02:45:34.174Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring简述</title>
+    <link href="http://hcattt.github.io/2021/06/06/spring-jian-shu/"/>
+    <id>http://hcattt.github.io/2021/06/06/spring-jian-shu/</id>
+    <published>2021-06-06T02:27:18.000Z</published>
+    <updated>2021-06-06T02:45:34.174Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Spring-框架两大核心机制（IoC、AOP）&quot;&gt;&lt;a href=&quot;#Spring-框架两大核心机制（IoC、AOP）&quot; class=&quot;headerlink&quot; title=&quot;Spring 框架两大核心机制（IoC、AOP）&quot;&gt;&lt;/a&gt;Spring</summary>
+        
+      
+    
+    
+    
+    
+    <category term="spring" scheme="http://hcattt.github.io/tags/spring/"/>
+    
+  </entry>
   
   <entry>
     <title>cookie与session的前生今世</title>
