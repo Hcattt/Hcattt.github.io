@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux运维, Hcattt">
+    <meta name="keywords" content="mybatis, Hcattt">
     <meta name="description" content="红豆思暖雨,如故芳我心">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux运维 | Hcattt</title>
+    <title>mybatis | Hcattt</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux运维</h1>
+                    <h1 class="description center-align post-title">mybatis</h1>
                 </div>
             </div>
         </div>
@@ -450,21 +450,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-31
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-02
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    0
                 </div>
                 
 
@@ -486,184 +486,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Linux-系统部署-Java-应用"><a href="#Linux-系统部署-Java-应用" class="headerlink" title="Linux 系统部署 Java 应用"></a>Linux 系统部署 Java 应用</h1><p>服务器 Linux </p>
-<p>阿里云、华为云、腾讯云</p>
-<p>安装虚拟机，虚拟机就是在你的电脑中安装一台虚拟的计算机，内存、CPU、硬盘，Linux 安装到虚拟机中。</p>
-<p>CentOS7，企业级 Linux 的发行版，完全开源，完全免费。</p>
-<p>安装软件：</p>
-<ul>
-<li>虚拟机 VMware workstation 15</li>
-<li>CentOS7</li>
-<li>安装 Java 环境 JDK 8</li>
-<li>安装 MySQL 8</li>
-<li>安装 Tomcat</li>
-<li>安装 Xshell</li>
-<li>安装 Xftp</li>
-</ul>
-<h1 id="安装-VM"><a href="#安装-VM" class="headerlink" title="安装 VM"></a>安装 VM</h1><h1 id="安装-Linux-操作系统-CentOS-7"><a href="#安装-Linux-操作系统-CentOS-7" class="headerlink" title="安装 Linux 操作系统 CentOS 7"></a>安装 Linux 操作系统 CentOS 7</h1><p>1、解压 CentOS7</p>
-<p>2、将解压之后的文件导入 VM，运行即可</p>
-<p>3、虚拟机设置</p>
-<p>默认的网络配置是桥接模式，直接接入当前的网络环境，如果网络不稳定，IP 会变。</p>
-<p>NAT，相当于在 Windows 系统中独立开辟一块新的网络空间，IP 地址固定不变的，无论是否接入外网，都可以访问 CentOS。</p>
-<p>4、启动虚拟机，用 root 权限登录</p>
-<p>用户名：root</p>
-<p>密码：123456</p>
-<p>Linux 查询 IP 地址</p>
-<pre class=" language-java"><code class="language-java">ifconfig
-</code></pre>
-<h1 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h1><p>1、删除 CentOS 自带的 OpenJDK</p>
-<p>2、通过 Xftp 将安装包拷贝到 CentOS 中</p>
-<p>3、通过命令安装 JDK</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh jdk<span class="token operator">-</span>8u221<span class="token operator">-</span>linux<span class="token operator">-</span>x64<span class="token punctuation">.</span>rpm
-</code></pre>
-<p>4、配环境变量</p>
-<pre class=" language-java"><code class="language-java">JAVA_HOME<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>java<span class="token operator">/</span>jdk<span class="token operator">/</span>jdk1<span class="token number">.8</span><span class="token punctuation">.</span>0_221<span class="token operator">-</span>amd64
-CLASSPATH<span class="token operator">=</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>lib<span class="token operator">:</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>jre<span class="token operator">/</span>lib
-PATH<span class="token operator">=</span>$PATH<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>bin<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>jre<span class="token operator">/</span>bin
-export PATH CLASSPATH JAVA_HOME
-</code></pre>
-<p>5、让配置生效</p>
-<pre class=" language-java"><code class="language-java">source <span class="token operator">/</span>etc<span class="token operator">/</span>profile
-</code></pre>
-<h1 id="Java-Web-应用"><a href="#Java-Web-应用" class="headerlink" title="Java Web 应用"></a>Java Web 应用</h1><p>1、配置 Tomcat</p>
-<p>2、解压缩</p>
-<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>zxvf apache<span class="token operator">-</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token punctuation">.</span><span class="token number">34</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
-</code></pre>
-<p>3、启动 Tomcat</p>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/startup<span class="token punctuation">.</span>sh
-</code></pre>
-<p>4、CentOS 开放 8080 端口</p>
-<ul>
-<li>检查防火墙状态</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state
-</code></pre>
-<p>running 表示防火墙是开启的，如果你看到的是 not running，防火墙关闭，需要开启</p>
-<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
-</code></pre>
-<ul>
-<li>开放 8080 端口</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
-</code></pre>
-<ul>
-<li>重启防火墙</li>
-</ul>
-<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
-</code></pre>
-<ul>
-<li>重新载入配置</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
-</code></pre>
-<h1 id="部署-Spring-Boot-应用"><a href="#部署-Spring-Boot-应用" class="headerlink" title="部署 Spring Boot 应用"></a>部署 Spring Boot 应用</h1><p>IDEA 启动 Spring Boot ，将 Spring Boot 应用打成 jar，通过命令行部署。</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar xxx<span class="token punctuation">.</span>jar
-</code></pre>
-<p>1、将 Spring Boot 应用打包，jar，Maven</p>
-<p>2、通过命令行启动 jar 即可</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
-</code></pre>
-<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><p>1、通过 Xftp 将 MySQL 安装包拷贝到 Linux</p>
-<p>2、解压缩</p>
-<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>xvf mysql<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm<span class="token operator">-</span>bundle<span class="token punctuation">.</span>tar 
-</code></pre>
-<p>3、安装 common、libs、client、server</p>
-<p>4、删除自带的 mariadb</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>e mariadb<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">44</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>centos<span class="token punctuation">.</span>x86_64 <span class="token operator">--</span>nodeps
-</code></pre>
-<p>5、安装命令行</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>common<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>client<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>server<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-</code></pre>
-<p>6、初始化 MySQL</p>
-<pre class=" language-java"><code class="language-java">mysqld <span class="token operator">--</span>initialize
-</code></pre>
-<p>7、授权防火墙</p>
-<pre class=" language-java"><code class="language-java">chown mysql<span class="token operator">:</span>mysql <span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql <span class="token operator">-</span>R<span class="token punctuation">;</span>
-systemctl start mysqld<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
-systemctl enable mysqld<span class="token punctuation">;</span>
-</code></pre>
-<p>8、查看数据库的初始化密码</p>
-<pre class=" language-java"><code class="language-java">cat <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>mysqld<span class="token punctuation">.</span>log <span class="token operator">|</span> grep password
-</code></pre>
-<p>9、登录数据库</p>
-<pre class=" language-java"><code class="language-java">mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p
-</code></pre>
-<p>10、修改密码</p>
-<pre class=" language-java"><code class="language-java">ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'root'</span><span class="token punctuation">;</span>
-</code></pre>
-<p>11、使用新密码登录</p>
-<p>12、开启远程访问</p>
-<pre class=" language-java"><code class="language-java">create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'root'</span><span class="token punctuation">;</span>
-grant all privileges on <span class="token operator">*</span><span class="token punctuation">.</span>* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
-flush privileges<span class="token punctuation">;</span>
-</code></pre>
-<p>13、开放 3306 端口</p>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">3306</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
-systemctl restart firewalld<span class="token punctuation">.</span>service
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
-</code></pre>
-<p>14、MySQL 安装默认使用美国的时区，北京时间比美国晚 8 小时</p>
-<pre class=" language-java"><code class="language-java">set global time_zone<span class="token operator">=</span><span class="token string">'+8:00'</span><span class="token punctuation">;</span>
-</code></pre>
-<p>15、创建数据表</p>
-<pre class=" language-java"><code class="language-java">create database test character set utf8 collate utf8_general_ci<span class="token punctuation">;</span>
-use test<span class="token punctuation">;</span>
-create table <span class="token function">user</span><span class="token punctuation">(</span>
-    id <span class="token keyword">int</span> primary key auto_increment<span class="token punctuation">,</span>
-    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    birthday datetime
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token string">'1999-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token string">'2000-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>war jar</p>
-<p>如果你使用的是 SSM 或者 Java WEB（非 Spring Boot）需要通过 war 包进行部署，先把你的应用打成 war 包，丢到外置的 Tomcat 中，启动 Tomcat 服务，进而访问你的应用。</p>
-<p>如果你使用的是 Spring Boot，内置了 Tomcat，直接用 jar 部署，使用命令启动即可</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
-</code></pre>
-<h1 id="centOS运行spring-boot程序"><a href="#centOS运行spring-boot程序" class="headerlink" title="centOS运行spring boot程序"></a>centOS运行spring boot程序</h1><pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar
-java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">--</span>server<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">80</span> #指定在<span class="token number">80</span>端口运行
-ctrl <span class="token operator">+</span> c 停止运行
-</code></pre>
-<p>后台运行</p>
-<p>1 starpup.sh  (启动)</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span>bin<span class="token operator">/</span>sh
-nohup java <span class="token operator">-</span>jar <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>java<span class="token operator">/</span>myproject<span class="token operator">/</span>work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">&amp;</span>         
-</code></pre>
-<p>2 关闭进程stop.sh</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
-PID<span class="token operator">=</span>$<span class="token punctuation">(</span>ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar<span class="token punctuation">.</span>jar <span class="token operator">|</span> grep <span class="token operator">-</span>v grep <span class="token operator">|</span> awk <span class="token string">'{ print $2 }'</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">-</span>z <span class="token string">"$PID"</span> <span class="token punctuation">]</span>
-then
-    echo Application is already stopped
-<span class="token keyword">else</span>
-    echo kill $PID
-    kill $PID
-fi
-
-
-________________________________________
-ps <span class="token operator">-</span>ef<span class="token operator">|</span>grep java  #查看带Java的进程
-kill  pid
-</code></pre>
-<p>3 重启服务  reboot.sh</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
-echo stop application
-source stop<span class="token punctuation">.</span>sh
-echo start application
-source startup<span class="token punctuation">.</span>sh
-</code></pre>
-<p>4 添加可执行权限</p>
-<pre class=" language-java"><code class="language-java">chmod <span class="token operator">+</span>x start<span class="token punctuation">.</span>sh
-chmod <span class="token operator">+</span>x stop<span class="token punctuation">.</span>sh
-chmod <span class="token operator">+</span>x run<span class="token punctuation">.</span>sh
-</code></pre>
-<p>5  netstat -ntpl|grep java   查看正在运行</p>
-<p>6 firewall-cmd –list-ports 防火墙开启的端口号</p>
-
+                
                 
             </div>
             <hr/>
@@ -689,7 +512,7 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Hcattt.github.io/2021/05/31/hello-world/">http://Hcattt.github.io/2021/05/31/hello-world/</a>
+                    <a href="http://Hcattt.github.io/2021/06/06/mybatis/">http://Hcattt.github.io/2021/06/06/mybatis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -896,17 +719,18 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/02/nginx-ru-men/">
+                <a href="/2021/06/06/mybatis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="nginx入门">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mybatis">
                         
-                        <span class="card-title">nginx入门</span>
+                        <span class="card-title">mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,9 +740,47 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zhangLong
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/06/spring-jian-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="spring简述">
+                        
+                        <span class="card-title">spring简述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -930,49 +792,11 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/31/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Linux运维">
-                        
-                        <span class="card-title">Linux运维</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            zhangLong
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>

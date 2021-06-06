@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="nginx入门, Hcattt">
+    <meta name="keywords" content="Linux运维, Hcattt">
     <meta name="description" content="红豆思暖雨,如故芳我心">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>nginx入门 | Hcattt</title>
+    <title>Linux运维 | Hcattt</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">nginx入门</h1>
+                    <h1 class="description center-align post-title">Linux运维</h1>
                 </div>
             </div>
         </div>
@@ -436,13 +436,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/nginx/">
-                                <span class="chip bg-color">nginx</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -454,21 +450,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-02
+                    2021-05-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-04
+                    2021-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.1k
                 </div>
                 
 
@@ -490,113 +486,183 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是Nginx？"><a href="#什么是Nginx？" class="headerlink" title="什么是Nginx？"></a>什么是Nginx？</h2><p>Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时也提供了IMAP/POP3/SMTP服务。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambler.ru站点（俄文：Рамблер）开发的，第一个公开版本0.1.0发布于2004年10月4日。2011年6月1日，nginx 1.0.4发布。</p>
-<p>其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx网站用户有：百度、京东、新浪、网易、腾讯、淘宝等。在全球活跃的网站中有12.18%的使用比率，大约为2220万个网站。</p>
-<p>Nginx 是一个安装非常的简单、配置文件非常简洁（还能够支持perl语法）、Bug非常少的服务。Nginx 启动特别容易，并且几乎可以做到7*24不间断运行，即使运行数个月也不需要重新启动。你还能够不间断服务的情况下进行软件版本的升级。</p>
-<p>Nginx代码完全用C语言从头写成。官方数据测试表明能够支持高达 50,000 个并发连接数的响应。</p>
-<h2 id="Nginx作用？"><a href="#Nginx作用？" class="headerlink" title="Nginx作用？"></a>Nginx作用？</h2><blockquote>
-<p>Http代理，反向代理：作为web服务器最常用的功能之一，尤其是反向代理。</p>
-</blockquote>
-<p>正向代理<br><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudy46bdad36-d3e0-43b0-a223-43360b7e8fc7.png" alt="img"><br>反向代理<br><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudy62a15097-6e2a-4dbe-bcf5-f0d7cab81089.png" alt="img"></p>
-<blockquote>
-<p>Nginx提供的负载均衡策略有2种：内置策略和扩展策略。内置策略为轮询，加权轮询，Ip hash。扩展策略，就天马行空，只有你想不到的没有他做不到的。</p>
-</blockquote>
-<p>轮询<br><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudy4d33dfac-1949-4b2d-abb8-fe0b6e65b8dc.png" alt="img"><br>加权轮询<br><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyb1e3e440-4159-4259-a174-528b56cb04b2.png" alt="img"><br>iphash对客户端请求的ip进行hash操作，然后根据hash结果将同一个客户端ip的请求分发给同一台服务器进行处理，可以解决session不共享的问题。<br><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudy64acb9a3-cd1a-4c0e-a1fa-9b220046a95a.png" alt="img"></p>
-<blockquote>
-<p>动静分离，在我们的软件开发中，有些请求是需要后台处理的，有些请求是不需要经过后台处理的（如：css、html、jpg、js等等文件），这些不需要经过后台处理的文件称为静态文件。让动态网站里的动态网页根据一定规则把不变的资源和经常变的资源区分开来，动静资源做好了拆分以后，我们就可以根据静态资源的特点将其做缓存操作。提高资源响应的速度。</p>
-</blockquote>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyedb1bbd6-e530-4aba-8fde-68658a10e73f.png" alt="img"></p>
-<p>目前，通过使用Nginx大大提高了我们网站的响应速度，优化了用户体验，让网站的健壮性更上一层楼！</p>
-<h1 id="Nginx的安装"><a href="#Nginx的安装" class="headerlink" title="Nginx的安装"></a>Nginx的安装</h1><h2 id="windows下安装"><a href="#windows下安装" class="headerlink" title="windows下安装"></a>windows下安装</h2><p><strong>1、下载nginx</strong></p>
-<p><a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">http://nginx.org/en/download.html</a> 下载稳定版本。<br>以nginx/Windows-1.16.1为例，直接下载 nginx-1.16.1.zip。<br>下载后解压，解压后如下：</p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyb5a1d538-352c-4aa6-88f7-23d18f0588ab.png" alt="img"></p>
-<p><strong>2、启动nginx</strong></p>
-<p>有很多种方法启动nginx</p>
-<p>(1)直接双击nginx.exe，双击后一个黑色的弹窗一闪而过</p>
-<p>(2)打开cmd命令窗口，切换到nginx解压目录下，输入命令 <code>nginx.exe</code> ，回车即可</p>
-<p><strong>3、检查nginx是否启动成功</strong></p>
-<p>直接在浏览器地址栏输入网址 <a target="_blank" rel="noopener" href="http://localhost/">http://localhost:80</a> 回车，出现以下页面说明启动成功！</p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudya21688c8-159e-4caa-8e65-3dc056b6b78e.png" alt="img"></p>
-<p><strong>4、配置监听</strong></p>
-<p>nginx的配置文件是conf目录下的nginx.conf，默认配置的nginx监听的端口为80，如果80端口被占用可以修改为未被占用的端口即可。</p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyf23105c4-b0b2-4e22-a1bf-b8098f40c144.png" alt="img"></p>
-<p>当我们修改了nginx的配置文件nginx.conf 时，不需要关闭nginx后重新启动nginx，只需要执行命令 <code>nginx -s reload</code> 即可让改动生效</p>
-<p><strong>5、关闭nginx</strong></p>
-<p>如果使用cmd命令窗口启动nginx， 关闭cmd窗口是不能结束nginx进程的，可使用两种方法关闭nginx</p>
-<p>(1)输入nginx命令 <code>nginx -s stop</code>(快速停止nginx) 或 <code>nginx -s quit</code>(完整有序的停止nginx)</p>
-<p>(2)使用taskkill <code>taskkill /f /t /im nginx.exe</code></p>
-<pre class=" language-java"><code class="language-java">taskkill是用来终止进程的，<span class="token operator">/</span>f是强制终止 <span class="token punctuation">.</span>/t终止指定的进程和任何由此启动的子进程。<span class="token operator">/</span>im示指定的进程名称 <span class="token punctuation">.</span>
+                <h1 id="Linux-系统部署-Java-应用"><a href="#Linux-系统部署-Java-应用" class="headerlink" title="Linux 系统部署 Java 应用"></a>Linux 系统部署 Java 应用</h1><p>服务器 Linux </p>
+<p>阿里云、华为云、腾讯云</p>
+<p>安装虚拟机，虚拟机就是在你的电脑中安装一台虚拟的计算机，内存、CPU、硬盘，Linux 安装到虚拟机中。</p>
+<p>CentOS7，企业级 Linux 的发行版，完全开源，完全免费。</p>
+<p>安装软件：</p>
+<ul>
+<li>虚拟机 VMware workstation 15</li>
+<li>CentOS7</li>
+<li>安装 Java 环境 JDK 8</li>
+<li>安装 MySQL 8</li>
+<li>安装 Tomcat</li>
+<li>安装 Xshell</li>
+<li>安装 Xftp</li>
+</ul>
+<h1 id="安装-VM"><a href="#安装-VM" class="headerlink" title="安装 VM"></a>安装 VM</h1><h1 id="安装-Linux-操作系统-CentOS-7"><a href="#安装-Linux-操作系统-CentOS-7" class="headerlink" title="安装 Linux 操作系统 CentOS 7"></a>安装 Linux 操作系统 CentOS 7</h1><p>1、解压 CentOS7</p>
+<p>2、将解压之后的文件导入 VM，运行即可</p>
+<p>3、虚拟机设置</p>
+<p>默认的网络配置是桥接模式，直接接入当前的网络环境，如果网络不稳定，IP 会变。</p>
+<p>NAT，相当于在 Windows 系统中独立开辟一块新的网络空间，IP 地址固定不变的，无论是否接入外网，都可以访问 CentOS。</p>
+<p>4、启动虚拟机，用 root 权限登录</p>
+<p>用户名：root</p>
+<p>密码：123456</p>
+<p>Linux 查询 IP 地址</p>
+<pre class=" language-java"><code class="language-java">ifconfig
 </code></pre>
-<h2 id="linux下安装"><a href="#linux下安装" class="headerlink" title="linux下安装"></a>linux下安装</h2><p><strong>1、安装gcc</strong></p>
-<p>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：</p>
-<pre><code>yum install gcc-c++
+<h1 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h1><p>1、删除 CentOS 自带的 OpenJDK</p>
+<p>2、通过 Xftp 将安装包拷贝到 CentOS 中</p>
+<p>3、通过命令安装 JDK</p>
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh jdk<span class="token operator">-</span>8u221<span class="token operator">-</span>linux<span class="token operator">-</span>x64<span class="token punctuation">.</span>rpm
 </code></pre>
-<p><strong>2、PCRE pcre-devel 安装</strong></p>
-<p>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</p>
-<pre><code>yum install -y pcre pcre-devel
+<p>4、配环境变量</p>
+<pre class=" language-java"><code class="language-java">JAVA_HOME<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>java<span class="token operator">/</span>jdk1<span class="token number">.8</span><span class="token punctuation">.</span>0_221<span class="token operator">-</span>amd64
+CLASSPATH<span class="token operator">=</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>lib<span class="token operator">:</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>jre<span class="token operator">/</span>lib
+PATH<span class="token operator">=</span>$PATH<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>bin<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>jre<span class="token operator">/</span>bin
+export PATH CLASSPATH JAVA_HOME
 </code></pre>
-<p><strong>3、zlib 安装</strong></p>
-<p>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</p>
-<pre class=" language-java"><code class="language-java">yum install <span class="token operator">-</span>y zlib zlib<span class="token operator">-</span>devel
+<p>5、让配置生效</p>
+<pre class=" language-java"><code class="language-java">source <span class="token operator">/</span>etc<span class="token operator">/</span>profile
 </code></pre>
-<p><strong>4、OpenSSL 安装</strong><br>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p>
-<pre class=" language-java"><code class="language-java">yum install <span class="token operator">-</span>y openssl openssl<span class="token operator">-</span>devel
+<h1 id="Java-Web-应用"><a href="#Java-Web-应用" class="headerlink" title="Java Web 应用"></a>Java Web 应用</h1><p>1、配置 Tomcat</p>
+<p>2、解压缩</p>
+<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>zxvf apache<span class="token operator">-</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token punctuation">.</span><span class="token number">34</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
 </code></pre>
-<p><strong>5、下载安装包</strong></p>
-<p>手动下载.tar.gz安装包，地址：<a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">https://nginx.org/en/download.html</a></p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyf51b946d-fda4-4675-b913-2084e028a5c0.png" alt="img"></p>
-<p>下载完毕上传到服务器上 /root</p>
-<p><strong>6、解压</strong></p>
-<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>zxvf nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gzcd nginx<span class="token operator">-</span><span class="token number">1.18</span><span class="token punctuation">.</span><span class="token number">0</span>
+<p>3、启动 Tomcat</p>
+<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/startup<span class="token punctuation">.</span>sh
 </code></pre>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyd8290598-ede7-4b4b-875b-2f447a9c001f.png" alt="img"></p>
-<p><strong>7、配置</strong></p>
-<p>使用默认配置，在nginx根目录下执行</p>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/configure
-make
-make install
+<p>4、CentOS 开放 8080 端口</p>
+<ul>
+<li>检查防火墙状态</li>
+</ul>
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state
 </code></pre>
-<p>查找安装路径： <code>whereis nginx</code></p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyf80f8dc2-d5df-4bc2-933d-6ce11f388f6e.png" alt="img"></p>
-<h2 id="Nginx常用命令"><a href="#Nginx常用命令" class="headerlink" title="Nginx常用命令"></a>Nginx常用命令</h2><pre class=" language-java"><code class="language-java">cd <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>nginx<span class="token operator">/</span>sbin<span class="token operator">/</span>
-<span class="token punctuation">.</span>/nginx  启动
-<span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s stop  停止
-<span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s quit  安全退出
-<span class="token punctuation">.</span>/nginx <span class="token operator">-</span>s reload  重新加载配置文件
-ps aux<span class="token operator">|</span>grep nginx  查看nginx进程
+<p>running 表示防火墙是开启的，如果你看到的是 not running，防火墙关闭，需要开启</p>
+<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
 </code></pre>
-<p>启动成功访问 服务器ip:80</p>
-<p><img src="https://kuangstudy.oss-cn-beijing.aliyuncs.com/bbs/2021/01/25/kuangstudyd64b251b-817c-436b-b7a0-57da7bb48cd1.png" alt="img"></p>
-<p>注意：如何连接不上，检查阿里云安全组是否开放端口，或者服务器防火墙是否开放端口！<br>相关命令：</p>
-<pre class=" language-java"><code class="language-java"># 开启
-service firewalld start
-# 重启
-service firewalld restart
-# 关闭
-service firewalld stop
-# 查看防火墙规则
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>list<span class="token operator">-</span>all
-# 查询端口是否开放
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>query<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp
-# 开放<span class="token number">80</span>端口
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>permanent <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">80</span><span class="token operator">/</span>tcp
-# 移除端口
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>permanent <span class="token operator">--</span>remove<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp
-#重启防火墙<span class="token punctuation">(</span>修改配置后要重启防火墙<span class="token punctuation">)</span>
+<ul>
+<li>开放 8080 端口</li>
+</ul>
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
+</code></pre>
+<ul>
+<li>重启防火墙</li>
+</ul>
+<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
+</code></pre>
+<ul>
+<li>重新载入配置</li>
+</ul>
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
+</code></pre>
+<h1 id="部署-Spring-Boot-应用"><a href="#部署-Spring-Boot-应用" class="headerlink" title="部署 Spring Boot 应用"></a>部署 Spring Boot 应用</h1><p>IDEA 启动 Spring Boot ，将 Spring Boot 应用打成 jar，通过命令行部署。</p>
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar xxx<span class="token punctuation">.</span>jar
+</code></pre>
+<p>1、将 Spring Boot 应用打包，jar，Maven</p>
+<p>2、通过命令行启动 jar 即可</p>
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
+</code></pre>
+<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><p>1、通过 Xftp 将 MySQL 安装包拷贝到 Linux</p>
+<p>2、解压缩</p>
+<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>xvf mysql<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm<span class="token operator">-</span>bundle<span class="token punctuation">.</span>tar 
+</code></pre>
+<p>3、安装 common、libs、client、server</p>
+<p>4、删除自带的 mariadb</p>
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>e mariadb<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">44</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>centos<span class="token punctuation">.</span>x86_64 <span class="token operator">--</span>nodeps
+</code></pre>
+<p>5、安装命令行</p>
+<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>common<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>client<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>server<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
+</code></pre>
+<p>6、初始化 MySQL</p>
+<pre class=" language-java"><code class="language-java">mysqld <span class="token operator">--</span>initialize
+</code></pre>
+<p>7、授权防火墙</p>
+<pre class=" language-java"><code class="language-java">chown mysql<span class="token operator">:</span>mysql <span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql <span class="token operator">-</span>R<span class="token punctuation">;</span>
+systemctl start mysqld<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
+systemctl enable mysqld<span class="token punctuation">;</span>
+</code></pre>
+<p>8、查看数据库的初始化密码</p>
+<pre class=" language-java"><code class="language-java">cat <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>mysqld<span class="token punctuation">.</span>log <span class="token operator">|</span> grep password
+</code></pre>
+<p>9、登录数据库</p>
+<pre class=" language-java"><code class="language-java">mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p
+</code></pre>
+<p>10、修改密码</p>
+<pre class=" language-java"><code class="language-java">ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'root'</span><span class="token punctuation">;</span>
+</code></pre>
+<p>11、使用新密码登录</p>
+<p>12、开启远程访问</p>
+<pre class=" language-java"><code class="language-java">create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'root'</span><span class="token punctuation">;</span>
+grant all privileges on <span class="token operator">*</span><span class="token punctuation">.</span>* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span>
+</code></pre>
+<p>13、开放 3306 端口</p>
+<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">3306</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
+systemctl restart firewalld<span class="token punctuation">.</span>service
 firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
-# 参数解释
-<span class="token number">1</span>、firwall<span class="token operator">-</span>cmd：是Linux提供的操作firewall的一个工具；
-<span class="token number">2</span>、<span class="token operator">--</span>permanent：表示设置为持久；
-<span class="token number">3</span>、<span class="token operator">--</span>add<span class="token operator">-</span>port：标识添加的端口；
 </code></pre>
-<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><pre class=" language-java"><code class="language-java">upstream lb<span class="token punctuation">{</span>
-    server <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8080</span> weight<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    server <span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8081</span> weight<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-location <span class="token operator">/</span> <span class="token punctuation">{</span>
-    proxy_pass http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>lb<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<p>14、MySQL 安装默认使用美国的时区，北京时间比美国晚 8 小时</p>
+<pre class=" language-java"><code class="language-java">set global time_zone<span class="token operator">=</span><span class="token string">'+8:00'</span><span class="token punctuation">;</span>
 </code></pre>
+<p>15、创建数据表</p>
+<pre class=" language-java"><code class="language-java">create database test character set utf8 collate utf8_general_ci<span class="token punctuation">;</span>
+use test<span class="token punctuation">;</span>
+create table <span class="token function">user</span><span class="token punctuation">(</span>
+    id <span class="token keyword">int</span> primary key auto_increment<span class="token punctuation">,</span>
+    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    birthday datetime
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token string">'1999-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token string">'2000-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>war jar</p>
+<p>如果你使用的是 SSM 或者 Java WEB（非 Spring Boot）需要通过 war 包进行部署，先把你的应用打成 war 包，丢到外置的 Tomcat 中，启动 Tomcat 服务，进而访问你的应用。</p>
+<p>如果你使用的是 Spring Boot，内置了 Tomcat，直接用 jar 部署，使用命令启动即可</p>
+<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
+</code></pre>
+<h1 id="centOS运行spring-boot程序"><a href="#centOS运行spring-boot程序" class="headerlink" title="centOS运行spring boot程序"></a>centOS运行spring boot程序</h1><pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar
+java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">--</span>server<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">80</span> #指定在<span class="token number">80</span>端口运行
+ctrl <span class="token operator">+</span> c 停止运行
+</code></pre>
+<p>后台运行</p>
+<p>1 starpup.sh  (启动)</p>
+<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span>bin<span class="token operator">/</span>sh
+nohup java <span class="token operator">-</span>jar <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>java<span class="token operator">/</span>myproject<span class="token operator">/</span>work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">&amp;</span>         
+</code></pre>
+<p>2 关闭进程stop.sh</p>
+<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
+PID<span class="token operator">=</span>$<span class="token punctuation">(</span>ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar<span class="token punctuation">.</span>jar <span class="token operator">|</span> grep <span class="token operator">-</span>v grep <span class="token operator">|</span> awk <span class="token string">'{ print $2 }'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">-</span>z <span class="token string">"$PID"</span> <span class="token punctuation">]</span>
+then
+    echo Application is already stopped
+<span class="token keyword">else</span>
+    echo kill $PID
+    kill $PID
+fi
+
+
+________________________________________
+ps <span class="token operator">-</span>ef<span class="token operator">|</span>grep java  #查看带Java的进程
+kill  pid
+</code></pre>
+<p>3 重启服务  reboot.sh</p>
+<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
+echo stop application
+source stop<span class="token punctuation">.</span>sh
+echo start application
+source startup<span class="token punctuation">.</span>sh
+</code></pre>
+<p>4 添加可执行权限</p>
+<pre class=" language-java"><code class="language-java">chmod <span class="token operator">+</span>x start<span class="token punctuation">.</span>sh
+chmod <span class="token operator">+</span>x stop<span class="token punctuation">.</span>sh
+chmod <span class="token operator">+</span>x run<span class="token punctuation">.</span>sh
+</code></pre>
+<p>5  netstat -ntpl|grep java   查看正在运行</p>
+<p>6 firewall-cmd –list-ports 防火墙开启的端口号</p>
 
                 
             </div>
@@ -623,7 +689,7 @@ location <span class="token operator">/</span> <span class="token punctuation">{
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Hcattt.github.io/2021/06/02/nginx-ru-men/">http://Hcattt.github.io/2021/06/02/nginx-ru-men/</a>
+                    <a href="http://Hcattt.github.io/2021/05/31/linux-yun-wei/">http://Hcattt.github.io/2021/05/31/linux-yun-wei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -660,11 +726,7 @@ location <span class="token operator">/</span> <span class="token punctuation">{
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/nginx/">
-                                    <span class="chip bg-color">nginx</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -838,13 +900,13 @@ location <span class="token operator">/</span> <span class="token punctuation">{
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/04/nginx-bu-shu-qian-hou-duan-fen-chi/">
+                <a href="/2021/06/02/nginx-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="nginx部署前后端分离">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="nginx入门">
                         
-                        <span class="card-title">nginx部署前后端分离</span>
+                        <span class="card-title">nginx入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,7 +917,7 @@ location <span class="token operator">/</span> <span class="token punctuation">{
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
                         </span>
                         <span class="publish-author">
                             
@@ -872,10 +934,6 @@ location <span class="token operator">/</span> <span class="token punctuation">{
                         <span class="chip bg-color">nginx</span>
                     </a>
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -884,7 +942,7 @@ location <span class="token operator">/</span> <span class="token punctuation">{
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2021/05/31/linux-yun-wei/">
@@ -914,6 +972,7 @@ location <span class="token operator">/</span> <span class="token punctuation">{
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
