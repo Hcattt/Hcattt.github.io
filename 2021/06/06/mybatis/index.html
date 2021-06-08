@@ -436,9 +436,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/mybatis/">
+                                <span class="chip bg-color">mybatis</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -464,7 +468,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    607
                 </div>
                 
 
@@ -486,7 +490,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>Mybatis<br>概述<br>mybatis是什么？有什么特点？</p>
+<p>它是一款半自动的ORM持久层框架，具有较高的SQL灵活性，支持高级映射(一对一，一对多)，动态SQL，延迟加载和缓存等特性，但它的数据库无关性较低</p>
+<p>什么是ORM？</p>
+<p>Object Relation Mapping，对象关系映射。对象指的是Java对象，关系指的是数据库中的关系模型，对象关系映射，指的就是在Java对象和数据库的关系模型之间建立一种对应关系，比如用一个Java的Student类，去对应数据库中的一张student表，类中的属性和表中的列一一对应。Student类就对应student表，一个Student对象就对应student表中的一行数据</p>
+<p>为什么mybatis是半自动的ORM框架？</p>
+<p>用mybatis进行开发，需要手动编写SQL语句。而全自动的ORM框架，如hibernate，则不需要编写SQL语句。用hibernate开发，只需要定义好ORM映射关系，就可以直接进行CRUD操作了。由于mybatis需要手写SQL语句，所以它有较高的灵活性，可以根据需要，自由地对SQL进行定制，也因为要手写SQL，当要切换数据库时，SQL语句可能就要重写，因为不同的数据库有不同的方言(Dialect)，所以mybatis的数据库无关性低。虽然mybatis需要手写SQL，但相比JDBC，它提供了输入映射和输出映射，可以很方便地进行SQL参数设置，以及结果集封装。并且还提供了关联查询和动态SQL等功能，极大地提升了开发的效率。并且它的学习成本也比hibernate低很多</p>
+<p>三种加载mapper的方式总结</p>
+<mapper resource="">
+
+<p>加载普通的xml文件，传入xml的相对路径(相对于类路径)</p>
+<mapper class="">
+
+<p>使用mapper接口的全限定名来加载，若mapper接口采用注解方式，则不需要xml;若mapper接口没有采用注解方式，则mapper接口和xml文件的名称要相同，且在同一个目录</p>
+<package name="">
+
+<p>扫描指定包下的所有mapper，若mapper接口采用注解方式，则不需要xml;若mapper接口没有采用注解方式，则mapper接口和xml文件的名称要相同，且在同一目录</p>
+<p>注意：用后两种方式加载mapper接口和mapper.xml映射文件时，可能会报错</p>
+</package></mapper></mapper>
                 
             </div>
             <hr/>
@@ -549,7 +570,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/mybatis/">
+                                    <span class="chip bg-color">mybatis</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -719,18 +744,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/06/mybatis/">
+                <a href="/2021/06/07/ajax/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mybatis">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ajax">
                         
-                        <span class="card-title">mybatis</span>
+                        <span class="card-title">ajax</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -740,9 +764,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -751,7 +775,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ajax/">
+                        <span class="chip bg-color">ajax</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
