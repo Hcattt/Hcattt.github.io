@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-09T08:42:25.399Z</updated>
+  <updated>2021-06-10T02:30:12.500Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux操作手册</title>
+    <link href="http://hcattt.github.io/2021/06/10/linux-cao-zuo-shou-ce/"/>
+    <id>http://hcattt.github.io/2021/06/10/linux-cao-zuo-shou-ce/</id>
+    <published>2021-06-10T02:29:09.000Z</published>
+    <updated>2021-06-10T02:30:12.500Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;关机-重启-注销&quot;&gt;&lt;a href=&quot;#关机-重启-注销&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://hcattt.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>jwt简述</title>
