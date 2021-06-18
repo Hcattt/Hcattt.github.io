@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-16T02:27:40.866Z</updated>
+  <updated>2021-06-16T10:56:22.468Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssm</title>
+    <link href="http://hcattt.github.io/2021/06/16/ssm/"/>
+    <id>http://hcattt.github.io/2021/06/16/ssm/</id>
+    <published>2021-06-16T10:22:38.000Z</published>
+    <updated>2021-06-16T10:56:22.468Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;SSM框架整合&quot;&gt;&lt;a href=&quot;#SSM框架整合&quot; class=&quot;headerlink&quot; title=&quot;SSM框架整合&quot;&gt;&lt;/a&gt;SSM框架整合&lt;/h3&gt;&lt;p&gt;Spring + Spring MVC + MyBatis&lt;/p&gt;
+&lt;p&gt;Spring MVC</summary>
+        
+      
+    
+    
+    
+    
+    <category term="ssm" scheme="http://hcattt.github.io/tags/ssm/"/>
+    
+  </entry>
   
   <entry>
     <title>java反射原理</title>
