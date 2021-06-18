@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-16T10:56:22.468Z</updated>
+  <updated>2021-06-18T01:24:29.841Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java web</title>
+    <link href="http://hcattt.github.io/2021/06/18/java-web/"/>
+    <id>http://hcattt.github.io/2021/06/18/java-web/</id>
+    <published>2021-06-18T01:14:05.000Z</published>
+    <updated>2021-06-18T01:24:29.841Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;java-Web&quot;&gt;&lt;a href=&quot;#java-Web&quot; class=&quot;headerlink&quot; title=&quot;java Web&quot;&gt;&lt;/a&gt;java Web&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1 JSP 和 servlet</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java" scheme="http://hcattt.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>ssm</title>
