@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java反射原理, Hcattt">
+    <meta name="keywords" content="java 异常, Hcattt">
     <meta name="description" content="红豆思暖雨,如故芳我心">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java反射原理 | Hcattt</title>
+    <title>java 异常 | Hcattt</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java反射原理</h1>
+                    <h1 class="description center-align post-title">java 异常</h1>
                 </div>
             </div>
         </div>
@@ -454,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-15
+                    2021-06-20
                 </div>
                 
 
@@ -468,7 +468,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
@@ -490,40 +490,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java反射"><a href="#Java反射" class="headerlink" title="Java反射"></a>Java反射</h2><p>在程序运行期间动态创建对象，编写代码/编译的过程，不需要知道创建的是哪个对象，只有在运行期间才知道要创建的对象是谁，动态获取类的信息，从而创建对象。</p>
-<p><strong>暴力反射</strong> setAccessible(true),反射可以对private强行赋值</p>
-<p>tips:在Javabean中，加上@Component 注入到IOC中</p>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>注解是结合反射来运行的，注解相当于是一个标识，不作具体的操作，具体操作是由反射来完成的。</p>
-<h2 id="synchronized锁啥"><a href="#synchronized锁啥" class="headerlink" title="synchronized锁啥"></a>synchronized锁啥</h2><ol>
-<li>修饰静态方法时 锁类本身</li>
-<li>修饰非静态方法时 谁使用锁谁</li>
-<li>修饰代码块时 传谁锁谁</li>
+                <h2 id="Java异常简介"><a href="#Java异常简介" class="headerlink" title="Java异常简介"></a>Java异常简介</h2><p>1.所有的异常都是从Throwable继承而来的，是所有异常的共同祖先。</p>
+<p>2.Throwable有两个子类，Error和Exception。其中Error是错误，对于所有的编译时期的错误以及系统错误都是通过Error抛出的。这些错误表示故障发生于虚拟机自身、或者发生在虚拟机试图执行应用时，如Java虚拟机运行错误（Virtual MachineError）、类定义错误（NoClassDefFoundError）等。这些错误是不可查的，因为它们在应用程序的控制和处理能力之 外，而且绝大多数是程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在 Java中，错误通过Error的子类描述。</p>
+<p>3.Exception，是另外一个非常重要的异常子类。它规定的异常是程序本身可以处理的异常。异常和错误的区别是，异常是可以被处理的，而错误是没法处理的。 </p>
+<p>4.Checked Exception</p>
+<p>可检查的异常，这是编码时非常常用的，所有checked exception都是需要在代码中处理的。它们的发生是可以预测的，正常的一种情况，可以合理的处理。比如IOException，或者一些自定义的异常。除了RuntimeException及其子类以外，都是checked exception。</p>
+<p>5.Unchecked Exception</p>
+<p>RuntimeException及其子类都是unchecked exception。比如NPE空指针异常，除数为0的算数异常ArithmeticException等等，这种异常是运行时发生，无法预先捕捉处理的。Error也是unchecked exception，也是无法预先处理的。</p>
+<p><img src="https://img-blog.csdn.net/20180920165502957?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21pY2hhZWxnbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=" Java异常架构"></p>
+<h2 id="异常关键字"><a href="#异常关键字" class="headerlink" title="异常关键字"></a>异常关键字</h2><p>1 try – 用于监听。将要被监听的代码(可能抛出异常的代码)放在try语句块之内，当try语句块内发生<br>异常时，异常就被抛出。<br>2 catch – 用于捕获异常。catch用来捕获try语句块中发生的异常。<br>3 finally – finally语句块总是会被执行。它主要用于回收在try块里打开的物力资源(如数据库连接、<br>网络连接和磁盘文件)。只有finally块，执行完成之后，才会回来执行try或者catch块中的return或<br>者throw语句，如果finally中使用了return或者throw等终止方法的语句，则就不会跳回执行，直<br>接停止。<br>4 throw – 用于抛出异常。<br>5 throws – 用在方法签名中，用于声明该方法可能抛出的异常。</p>
+<h2 id="异常的处理"><a href="#异常的处理" class="headerlink" title="异常的处理"></a>异常的处理</h2><p>代码中的异常处理其实是对可检查异常的处理。</p>
+<ol>
+<li>通过try…catch语句块来处理：</li>
 </ol>
-<p>java代码执行顺序</p>
-<p>父类静态字段-&gt;父类静态代码块-&gt;子类静态字段-&gt;子类静态代码块-&gt;父类成员变量和非静态块(顺序加载)-&gt;父类构造函数-&gt;子类成员变量和非静态块(顺序加载)-&gt;子类构造函数</p>
-<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>百度百科中解释：指作为单个逻辑工作单元执行的一系列操作，要么完全地执行，要么完全地不执行。<br>简单的说，事务就是并发控制的单位，是用户定义的一个操作序列。<br>而一个逻辑工作单元要成为事务，就必须满足ACID属性。<br>A：原子性（Atomicity）<br>    事务中的操作要么都不做，要么就全做。<br>C：一致性（Consistency）<br>    事务执行的结果必须是从数据库从一个一致性状态转换到另一个一致性状态。<br>I：隔离性（Isolation）<br>    一个事务的执行不能被其他事务干扰<br>D：持久性（Durability）<br>    一个事务一旦提交，它对数据库中数据的改变就应该是永久性的</p>
-<h2 id="数据库索引"><a href="#数据库索引" class="headerlink" title="数据库索引"></a>数据库索引</h2><p>索引是为了提高查询速度，相当于给数据进行编号，在查找数据的时候通过编号快速找到对应数据</p>
-<p>B+Tree</p>
-<p>主键自带索引，乱序插入数据，会自动按照id进行升序排列，数据存储内部结构类似于链表的形式，通过指针来关联不同的数据。数据量很大，查询还是很慢。</p>
-<p>Mysql中有一个page的概念，相当于给数据进行分页，把一部分数据存入一个page中，每个page可以存储16kb的数据，相当于给数据建立了上城目录，先找大目录，在找具体的数据，MySql给page提供了快速查找的page目录。一个page目录中也可以存储16kb的数据。</p>
-<p>B+树索引是B+树在数据库中的一种实现，是最常见也是数据库中使用最为频繁的一种索引。B+树中的B代表平衡（balance），而不是二叉（binary），因为B+树是从最早的平衡二叉树演化而来的。先了解二叉查找树、平衡二叉树（AVLTree）和平衡多路查找树（B-Tree），B+树即由这些树逐步优化而来。</p>
-<p>为什么要用B+树做索引</p>
-<pre class=" language-yml"><code class="language-yml">1) B+树是一种排序好的数据结构。
-2)与普通的二叉树相比，B+树只在叶子节点做存储，在同样的内存下，B+树叶子能够存储更多的节点数量,遍历起来更快速方便。
-3) B+树是一一种平衡的多叉树，能够做更少的磁盘I/O, 另外叶子节点也可以连接起来，加快遍历。
+<pre class=" language-java"><code class="language-java"><span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">// 程序代码</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>ExceptionName e1<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">//Catch 块</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="MySQL索引相关优化"><a href="#MySQL索引相关优化" class="headerlink" title="MySQL索引相关优化"></a>MySQL索引相关优化</h2><p>1 尽量使用主键查询: 聚簇索引上存储了全部数据, 相比普通索引查询, 减少了回表的消耗.<br>2 MySQL5.6之后引入了索引下推优化, 通过适当的使用联合索引, 减少回表判断的消耗.<br>3 若频繁查询某一列数据, 可以考虑利用覆盖索引避免回表.<br>4 联合索引将高频字段放在最左边.</p>
-<h2 id="MySQL事务的隔离级别"><a href="#MySQL事务的隔离级别" class="headerlink" title="MySQL事务的隔离级别"></a>MySQL事务的隔离级别</h2><ol>
-<li><p>读未提交(RU): 一个事务还没提交时, 它做的变更就能被别的事务看到.</p>
-</li>
-<li><p>读提交(RC): 一个事务提交之后, 它做的变更才会被其他事务看到.</p>
-</li>
-<li><p>可重复读(RR): 一个事务执行过程中看到的数据, 总是跟这个事务在启动时看到的数据是一致的. 当<br>然在可重复读隔离级别下, 未提交变更对其他事务也是不可见的.</p>
-</li>
-<li><p>串行化(S): 对于同一行记录, 读写都会加锁. 当出现读写锁冲突的时候, 后访问的事务必须等前一个<br>事务执行完成才能继续执行.</p>
-</li>
+<p>Catch 语句包含要捕获异常类型的声明。当保护代码块中发生一个异常时，try 后面的 catch 块就会被检查。</p>
+<p>如果发生的异常包含在 catch 块中，异常会被传递到该 catch 块，这和传递一个参数到方法是一样。</p>
+<ol start="2">
+<li>另外，也可以在具体位置不处理，直接抛出，通过throws/throw到上层再进行处理，具体的，如果一个方法没有捕获到一个检查性异常，那么该方法必须使用 throws 关键字来声明。throws 关键字放在方法签名的尾部。也可以使用 throw 关键字抛出一个异常，无论它是新实例化的还是刚捕获到的。</li>
 </ol>
-<h2 id="完整性约束包括哪些？"><a href="#完整性约束包括哪些？" class="headerlink" title="完整性约束包括哪些？"></a>完整性约束包括哪些？</h2><p>数据完整性(Data Integrity)是指数据的精确(Accuracy)和可靠性(Reliability)。<br>分为以下四类：<br>1、实体完整性： 规定表的每一行在表中是惟一的实体。<br>2、域完整性：是指表中的列必须满足某种特定的数据类型约束，其中约束又包括 取值范围、精度等<br>规定。3、参照完整性： 是指两个表的主关键字和外关键字的数据应一致，保证了表之间的数据的一致性，<br>防止了数据丢失或无意义的数据在数据库中扩散。<br>4、用户定义的完整性：不同的关系数据库系统根据其应用环境的不同，往往还需 要一些特殊的约束<br>条件。用户定义的完整性即是针对某个特定关系数据库的约束条件， 它反映某一具体应用必须满足的语<br>义要求。<br>与表有关的约束：包括列约束(NOT NULL（ 非空约束）)和表约束(PRIMARY KEY、foreign key、<br>check、UNIQUE) </p>
+<p>下面方法的声明抛出一个 RemoteException 异常：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">className</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deposit</span><span class="token punctuation">(</span><span class="token keyword">double</span> amount<span class="token punctuation">)</span> <span class="token keyword">throws</span> RemoteException
+  <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Method implementation</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RemoteException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//Remainder of class definition</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol start="3">
+<li>finally关键字</li>
+</ol>
+<p>finally 关键字用来创建在 try 代码块后面执行的代码块。</p>
+<p>无论是否发生异常，finally 代码块中的代码总会被执行。</p>
+<p>在 finally 代码块中，可以运行清理类型等收尾善后性质的语句。</p>
+<p>finally 代码块出现在 catch 代码块最后，语法如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">try</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 程序代码</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>异常类型<span class="token number">1</span> 异常的变量名<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 程序代码</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>异常类型<span class="token number">2</span> 异常的变量名<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 程序代码</span>
+<span class="token punctuation">}</span><span class="token keyword">finally</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 程序代码</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="常见的-RuntimeException"><a href="#常见的-RuntimeException" class="headerlink" title="常见的 RuntimeException"></a>常见的 RuntimeException</h2><p>ClassCastException(类转换异常)<br>IndexOutOfBoundsException(数组越界)<br>NullPointerException(空指针)<br>ArrayStoreException(数据存储异常，操作数组时类型不一致)<br>还有IO操作的BufferOverflowException异常</p>
+<h2 id="Error-和-Exception-区别"><a href="#Error-和-Exception-区别" class="headerlink" title="Error 和 Exception 区别"></a>Error 和 Exception 区别</h2><p>Error 类型的错误通常为虚拟机相关错误，如系统崩溃，内存不足，堆栈溢出等，编译器不会对这<br>类错误进行检测，JAVA 应用程序也不应对这类错误进行捕获，一旦这类错误发生，通常应用程序<br>会被终止，仅靠应用程序本身无法恢复；<br>Exception 类的错误是可以在应用程序中进行捕获并处理的，通常遇到这种错误，应对其进行处<br>理，使应用程序可以继续正常运行。</p>
+<h2 id="throw-和-throws"><a href="#throw-和-throws" class="headerlink" title="throw 和 throws"></a>throw 和 throws</h2><p>Java 中的异常处理除了包括捕获异常和处理异常之外，还包括声明异常和拋出异常，可以通过<br>throws 关键字在方法上声明该方法要拋出的异常，或者在方法内部通过 throw 拋出异常对象。<br><strong>throws 关键字和 throw 关键字在使用上的几点区别如下：</strong></p>
+<p>throw 关键字用在方法内部，只能用于抛出一种异常，用来抛出方法或代码块中的异常，受查异常<br>和非受查异常都可以被抛出。<br>throws 关键字用在方法声明上，可以抛出多个异常，用来标识该方法可能抛出的异常列表。一个<br>方法用 throws 标识了可能抛出的异常列表，调用该方法的方法中必须包含可处理异常的代码，否<br>则也要在方法签名中用 throws 关键字声明相应的异常。</p>
+<h2 id="final、finally、finalize-区别？"><a href="#final、finally、finalize-区别？" class="headerlink" title="final、finally、finalize 区别？"></a>final、finally、finalize 区别？</h2><ol>
+<li>final可以修饰类、变量、方法，修饰类表示该类不能被继承、修饰方法表示该方法不能被重写、<br>修饰变量表示该变量是一个常量不能被重新赋值。</li>
+<li>finally一般作用在try-catch代码块中，在处理异常的时候，通常我们将一定要执行的代码方法<br>finally代码块中，表示不管是否出现异常，该代码块都会执行，一般用来存放一些关闭资源的代<br>码。</li>
+<li>finalize是一个方法，属于Object类的一个方法，而Object类是所有类的父类，Java 中允许使用<br>finalize()方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。</li>
+</ol>
 
                 
             </div>
@@ -550,7 +580,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Hcattt.github.io/2021/06/15/java-fan-she-yuan-li/">http://Hcattt.github.io/2021/06/15/java-fan-she-yuan-li/</a>
+                    <a href="http://Hcattt.github.io/2021/06/20/java-yi-chang/">http://Hcattt.github.io/2021/06/20/java-yi-chang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -761,17 +791,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/16/ssm/">
+                <a href="/2021/06/20/java-yi-chang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ssm">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="java 异常">
                         
-                        <span class="card-title">ssm</span>
+                        <span class="card-title">java 异常</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -781,9 +812,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -792,11 +823,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ssm/">
-                        <span class="chip bg-color">ssm</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -810,13 +842,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/10/linux-cao-zuo-shou-ce/">
+                <a href="/2021/06/18/java-web/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="linux操作手册">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java web">
                         
-                        <span class="card-title">linux操作手册</span>
+                        <span class="card-title">java web</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -827,7 +859,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-18
                             </span>
                         <span class="publish-author">
                             
@@ -840,8 +872,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>

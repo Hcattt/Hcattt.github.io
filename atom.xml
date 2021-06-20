@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-18T01:24:29.841Z</updated>
+  <updated>2021-06-20T13:38:23.791Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java 异常</title>
+    <link href="http://hcattt.github.io/2021/06/20/java-yi-chang/"/>
+    <id>http://hcattt.github.io/2021/06/20/java-yi-chang/</id>
+    <published>2021-06-20T13:21:39.000Z</published>
+    <updated>2021-06-20T13:38:23.791Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Java异常简介&quot;&gt;&lt;a href=&quot;#Java异常简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java" scheme="http://hcattt.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>java web</title>
@@ -68,7 +91,7 @@
     <link href="http://hcattt.github.io/2021/06/15/java-fan-she-yuan-li/"/>
     <id>http://hcattt.github.io/2021/06/15/java-fan-she-yuan-li/</id>
     <published>2021-06-15T12:42:19.000Z</published>
-    <updated>2021-06-16T02:27:40.866Z</updated>
+    <updated>2021-06-20T13:16:25.500Z</updated>
     
     
       
