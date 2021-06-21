@@ -6,7 +6,7 @@
   <link href="http://hcattt.github.io/atom.xml" rel="self"/>
   
   <link href="http://hcattt.github.io/"/>
-  <updated>2021-06-20T13:38:23.791Z</updated>
+  <updated>2021-06-21T07:33:28.060Z</updated>
   <id>http://hcattt.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>request control</title>
+    <link href="http://hcattt.github.io/2021/06/21/request-control/"/>
+    <id>http://hcattt.github.io/2021/06/21/request-control/</id>
+    <published>2021-06-21T07:19:01.000Z</published>
+    <updated>2021-06-21T07:33:28.060Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;过滤器-Filter-介绍&quot;&gt;&lt;a href=&quot;#过滤器-Filter-介绍&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Filter" scheme="http://hcattt.github.io/tags/Filter/"/>
+    
+    <category term="Interceptor" scheme="http://hcattt.github.io/tags/Interceptor/"/>
+    
+  </entry>
   
   <entry>
     <title>java 异常</title>

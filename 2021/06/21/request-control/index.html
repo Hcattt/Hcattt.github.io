@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux运维, Hcattt">
+    <meta name="keywords" content="request control, Hcattt">
     <meta name="description" content="红豆思暖雨,如故芳我心">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux运维 | Hcattt</title>
+    <title>request control | Hcattt</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux运维</h1>
+                    <h1 class="description center-align post-title">request control</h1>
                 </div>
             </div>
         </div>
@@ -436,9 +436,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Filter/">
+                                <span class="chip bg-color">Filter</span>
+                            </a>
+                        
+                            <a href="/tags/Interceptor/">
+                                <span class="chip bg-color">Interceptor</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -450,21 +458,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-31
+                    2021-06-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-16
+                    2021-06-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.1k
                 </div>
                 
 
@@ -486,205 +494,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Linux-系统部署-Java-应用"><a href="#Linux-系统部署-Java-应用" class="headerlink" title="Linux 系统部署 Java 应用"></a>Linux 系统部署 Java 应用</h1><p>服务器 Linux </p>
-<p>阿里云、华为云、腾讯云</p>
-<p>安装虚拟机，虚拟机就是在你的电脑中安装一台虚拟的计算机，内存、CPU、硬盘，Linux 安装到虚拟机中。</p>
-<p>CentOS7，企业级 Linux 的发行版，完全开源，完全免费。</p>
-<p>安装软件：</p>
-<ul>
-<li>虚拟机 VMware workstation 15</li>
-<li>CentOS7</li>
-<li>安装 Java 环境 JDK 8</li>
-<li>安装 MySQL 8</li>
-<li>安装 Tomcat</li>
-<li>安装 Xshell</li>
-<li>安装 Xftp</li>
-</ul>
-<h1 id="安装-VM"><a href="#安装-VM" class="headerlink" title="安装 VM"></a>安装 VM</h1><h1 id="安装-Linux-操作系统-CentOS-7"><a href="#安装-Linux-操作系统-CentOS-7" class="headerlink" title="安装 Linux 操作系统 CentOS 7"></a>安装 Linux 操作系统 CentOS 7</h1><p>1、解压 CentOS7</p>
-<p>2、将解压之后的文件导入 VM，运行即可</p>
-<p>3、虚拟机设置</p>
-<p>默认的网络配置是桥接模式，直接接入当前的网络环境，如果网络不稳定，IP 会变。</p>
-<p>NAT，相当于在 Windows 系统中独立开辟一块新的网络空间，IP 地址固定不变的，无论是否接入外网，都可以访问 CentOS。</p>
-<p>4、启动虚拟机，用 root 权限登录</p>
-<p>用户名：root</p>
-<p>密码：123456</p>
-<p>Linux 查询 IP 地址</p>
-<pre class=" language-java"><code class="language-java">ifconfig
+                <h2 id="过滤器-Filter-介绍"><a href="#过滤器-Filter-介绍" class="headerlink" title="过滤器(Filter)介绍"></a><strong>过滤器(Filter)介绍</strong></h2><p>Filter可以认为是Servlet的一种“加强版”，它主要用于对用户请求进行预处理，也可以对HttpServletResponse进行后处理，是个典型的处理链。Filter也可以对用户请求生成响应，这一点与Servlet相同，但实际上很少会使用Filter向用户请求生成响应。使用Filter完整的流程是：Filter对用户请求进行预处理，接着将请求交给Servlet进行预处理并生成响应，最后Filter再对服务器响应进行后处理。</p>
+<p>定义过滤条件</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserFilter</span> <span class="token keyword">implements</span> <span class="token class-name">Filter</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">doFilter</span><span class="token punctuation">(</span>ServletRequest servletRequest<span class="token punctuation">,</span> ServletResponse servletResponse<span class="token punctuation">,</span> FilterChain filterChain<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">,</span> ServletException <span class="token punctuation">{</span>
+        HttpServletRequest request <span class="token operator">=</span> <span class="token punctuation">(</span>HttpServletRequest<span class="token punctuation">)</span> servletRequest<span class="token punctuation">;</span>
+        HttpServletResponse response <span class="token operator">=</span> <span class="token punctuation">(</span>HttpServletResponse<span class="token punctuation">)</span> servletResponse<span class="token punctuation">;</span>
+        HttpSession session <span class="token operator">=</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span> <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span><span class="token string">"/login"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span><span class="token punctuation">{</span>
+            filterChain<span class="token punctuation">.</span><span class="token function">doFilter</span><span class="token punctuation">(</span>servletRequest<span class="token punctuation">,</span>servletResponse<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h1 id="安装-JDK"><a href="#安装-JDK" class="headerlink" title="安装 JDK"></a>安装 JDK</h1><p>1、删除 CentOS 自带的 OpenJDK</p>
-<p>2、通过 Xftp 将安装包拷贝到 CentOS 中</p>
-<p>3、通过命令安装 JDK</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh jdk<span class="token operator">-</span>8u221<span class="token operator">-</span>linux<span class="token operator">-</span>x64<span class="token punctuation">.</span>rpm
-</code></pre>
-<p>4、配环境变量</p>
-<pre class=" language-java"><code class="language-java">JAVA_HOME<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>java<span class="token operator">/</span>jdk1<span class="token number">.8</span><span class="token punctuation">.</span>0_221<span class="token operator">-</span>amd64
-CLASSPATH<span class="token operator">=</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>lib<span class="token operator">:</span><span class="token operator">%</span>JAVA_HOME<span class="token operator">%</span><span class="token operator">/</span>jre<span class="token operator">/</span>lib
-PATH<span class="token operator">=</span>$PATH<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>bin<span class="token operator">:</span>$JAVA_HOME<span class="token operator">/</span>jre<span class="token operator">/</span>bin
-export PATH CLASSPATH JAVA_HOME
-</code></pre>
-<p>5、让配置生效</p>
-<pre class=" language-java"><code class="language-java">source <span class="token operator">/</span>etc<span class="token operator">/</span>profile
-</code></pre>
-<h1 id="Java-Web-应用"><a href="#Java-Web-应用" class="headerlink" title="Java Web 应用"></a>Java Web 应用</h1><p>1、配置 Tomcat</p>
-<p>2、解压缩</p>
-<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>zxvf apache<span class="token operator">-</span>tomcat<span class="token operator">-</span><span class="token number">9.0</span><span class="token punctuation">.</span><span class="token number">34</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
-</code></pre>
-<p>3、启动 Tomcat</p>
-<pre class=" language-java"><code class="language-java"><span class="token punctuation">.</span>/startup<span class="token punctuation">.</span>sh
-</code></pre>
-<p>4、CentOS 开放 8080 端口</p>
-<ul>
-<li>检查防火墙状态</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>state
-</code></pre>
-<p>running 表示防火墙是开启的，如果你看到的是 not running，防火墙关闭，需要开启</p>
-<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
-</code></pre>
-<ul>
-<li>开放 8080 端口</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">8080</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
-</code></pre>
-<ul>
-<li>重启防火墙</li>
-</ul>
-<pre class=" language-java"><code class="language-java">systemctl restart firewalld<span class="token punctuation">.</span>service
-</code></pre>
-<ul>
-<li>重新载入配置</li>
-</ul>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
-</code></pre>
-<h1 id="部署-Spring-Boot-应用"><a href="#部署-Spring-Boot-应用" class="headerlink" title="部署 Spring Boot 应用"></a>部署 Spring Boot 应用</h1><p>IDEA 启动 Spring Boot ，将 Spring Boot 应用打成 jar，通过命令行部署。</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar xxx<span class="token punctuation">.</span>jar
-</code></pre>
-<p>1、将 Spring Boot 应用打包，jar，Maven</p>
-<p>2、通过命令行启动 jar 即可</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
-</code></pre>
-<h1 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h1><p>1、通过 Xftp 将 MySQL 安装包拷贝到 Linux</p>
-<p>2、解压缩</p>
-<pre class=" language-java"><code class="language-java">tar <span class="token operator">-</span>xvf mysql<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm<span class="token operator">-</span>bundle<span class="token punctuation">.</span>tar 
-</code></pre>
-<p>3、安装 common、libs、client、server</p>
-<p>4、删除自带的 mariadb</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>e mariadb<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">5.5</span><span class="token punctuation">.</span><span class="token number">44</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>centos<span class="token punctuation">.</span>x86_64 <span class="token operator">--</span>nodeps
-</code></pre>
-<p>5、安装命令行</p>
-<pre class=" language-java"><code class="language-java">rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>common<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>libs<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>client<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-rpm <span class="token operator">-</span>ivh mysql<span class="token operator">-</span>community<span class="token operator">-</span>server<span class="token operator">-</span><span class="token number">8.0</span><span class="token punctuation">.</span><span class="token number">20</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>el7<span class="token punctuation">.</span>x86_64<span class="token punctuation">.</span>rpm <span class="token operator">--</span>nodeps <span class="token operator">--</span>force
-</code></pre>
-<p>6、初始化 MySQL</p>
-<pre class=" language-java"><code class="language-java">mysqld <span class="token operator">--</span>initialize
-</code></pre>
-<p>7、授权防火墙</p>
-<pre class=" language-java"><code class="language-java">chown mysql<span class="token operator">:</span>mysql <span class="token operator">/</span>var<span class="token operator">/</span>lib<span class="token operator">/</span>mysql <span class="token operator">-</span>R<span class="token punctuation">;</span>
-systemctl start mysqld<span class="token punctuation">.</span>service<span class="token punctuation">;</span>
-systemctl enable mysqld<span class="token punctuation">;</span>
-</code></pre>
-<p>8、查看数据库的初始化密码</p>
-<pre class=" language-java"><code class="language-java">cat <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>mysqld<span class="token punctuation">.</span>log <span class="token operator">|</span> grep password
-</code></pre>
-<p>9、登录数据库</p>
-<pre class=" language-java"><code class="language-java">mysql <span class="token operator">-</span>uroot <span class="token operator">-</span>p
-</code></pre>
-<p>10、修改密码</p>
-<pre class=" language-java"><code class="language-java">ALTER USER <span class="token string">'root'</span>@<span class="token string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="token string">'root'</span><span class="token punctuation">;</span>
-</code></pre>
-<p>11、使用新密码登录</p>
-<p>12、开启远程访问</p>
-<pre class=" language-java"><code class="language-java">create user <span class="token string">'root'</span>@<span class="token string">'%'</span> identified with mysql_native_password by <span class="token string">'root'</span><span class="token punctuation">;</span>
-grant all privileges on <span class="token operator">*</span><span class="token punctuation">.</span>* to <span class="token string">'root'</span>@<span class="token string">'%'</span> with grant option<span class="token punctuation">;</span>
-flush privileges<span class="token punctuation">;</span>
-</code></pre>
-<p>13、开放 3306 端口</p>
-<pre class=" language-java"><code class="language-java">firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>zone<span class="token operator">=</span><span class="token keyword">public</span> <span class="token operator">--</span>add<span class="token operator">-</span>port<span class="token operator">=</span><span class="token number">3306</span><span class="token operator">/</span>tcp <span class="token operator">--</span>permanent
-systemctl restart firewalld<span class="token punctuation">.</span>service
-firewall<span class="token operator">-</span>cmd <span class="token operator">--</span>reload
-</code></pre>
-<p>14、MySQL 安装默认使用美国的时区，北京时间比美国晚 8 小时</p>
-<pre class=" language-java"><code class="language-java">set global time_zone<span class="token operator">=</span><span class="token string">'+8:00'</span><span class="token punctuation">;</span>
-</code></pre>
-<p>15、创建数据表</p>
-<pre class=" language-java"><code class="language-java">create database test character set utf8 collate utf8_general_ci<span class="token punctuation">;</span>
-use test<span class="token punctuation">;</span>
-create table <span class="token function">user</span><span class="token punctuation">(</span>
-    id <span class="token keyword">int</span> primary key auto_increment<span class="token punctuation">,</span>
-    name <span class="token function">varchar</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    birthday datetime
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小明'</span><span class="token punctuation">,</span><span class="token string">'1999-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-insert into <span class="token function">user</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> birthday<span class="token punctuation">)</span> <span class="token function">VALUES</span> <span class="token punctuation">(</span><span class="token string">'小红'</span><span class="token punctuation">,</span><span class="token string">'2000-01-01'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>war jar</p>
-<p>如果你使用的是 SSM 或者 Java WEB（非 Spring Boot）需要通过 war 包进行部署，先把你的应用打成 war 包，丢到外置的 Tomcat 中，启动 Tomcat 服务，进而访问你的应用。</p>
-<p>如果你使用的是 Spring Boot，内置了 Tomcat，直接用 jar 部署，使用命令启动即可</p>
-<pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar demo<span class="token punctuation">.</span>jar
-</code></pre>
-<h1 id="CentOS运行spring-boot程序"><a href="#CentOS运行spring-boot程序" class="headerlink" title="CentOS运行spring boot程序"></a>CentOS运行spring boot程序</h1><pre class=" language-java"><code class="language-java">java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar
-java <span class="token operator">-</span>jar work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">--</span>server<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">80</span> #指定在<span class="token number">80</span>端口运行
-ctrl <span class="token operator">+</span> c 停止运行
-</code></pre>
-<p>后台运行</p>
-<p>1 starpup.sh  (启动)</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span>bin<span class="token operator">/</span>sh
-nohup java <span class="token operator">-</span>jar <span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>java<span class="token operator">/</span>myproject<span class="token operator">/</span>work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar <span class="token operator">&amp;</span>         
-</code></pre>
-<p>2 关闭进程stop.sh</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
-PID<span class="token operator">=</span>$<span class="token punctuation">(</span>ps <span class="token operator">-</span>ef <span class="token operator">|</span> grep work3<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>jar<span class="token punctuation">.</span>jar <span class="token operator">|</span> grep <span class="token operator">-</span>v grep <span class="token operator">|</span> awk <span class="token string">'{ print $2 }'</span><span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">-</span>z <span class="token string">"$PID"</span> <span class="token punctuation">]</span>
-then
-    echo Application is already stopped
-<span class="token keyword">else</span>
-    echo kill $PID
-    kill $PID
-fi
+<p>需要过滤的请求</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FilterConfig</span> <span class="token punctuation">{</span>
 
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> FilterRegistrationBean <span class="token function">filterRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        FilterRegistrationBean filterRegistrationBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FilterRegistrationBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        filterRegistrationBean<span class="token punctuation">.</span><span class="token function">setFilter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UserFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        filterRegistrationBean<span class="token punctuation">.</span><span class="token function">addUrlPatterns</span><span class="token punctuation">(</span><span class="token string">"/cart/*"</span><span class="token punctuation">,</span><span class="token string">"/orders/*"</span><span class="token punctuation">,</span><span class="token string">"/user/userInfo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> filterRegistrationBean<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>创建Filter必须实现javax.servlet.Filter接口，在该接口中定义了如下三个方法。</p>
+<ul>
+<li>void init(FilterConfig config):用于完成Filter的初始化。</li>
+<li>void destory():用于Filter销毁前，完成某些资源的回收。</li>
+<li>void doFilter(ServletRequest request,ServletResponse response,FilterChain chain):实现过滤功能，该方法就是对每个请求及响应增加的额外处理。该方法可以实现对用户请求进行预处理(ServletRequest request)，也可实现对服务器响应进行后处理(ServletResponse response)—它们的分界线为是否调用了chain.doFilter(),执行该方法之前，即对用户请求进行预处理；执行该方法之后，即对服务器响应进行后处理。</li>
+</ul>
+<h2 id="拦截器-Interceptor-介绍"><a href="#拦截器-Interceptor-介绍" class="headerlink" title="拦截器(Interceptor)介绍"></a><strong>拦截器(Interceptor)介绍</strong></h2><p>拦截器，在AOP(Aspect-Oriented Programming)中用于在某个方法或字段被访问之前，进行拦截，然后在之前或之后加入某些操作。拦截是AOP的一种实现策略。</p>
+<p>拦截规则</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+ * 拦截器类,重写HandlerInterceptor的三个方法
+ * */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInterceptor</span> <span class="token keyword">implements</span> <span class="token class-name">HandlerInterceptor</span> <span class="token punctuation">{</span>
 
-________________________________________
-ps <span class="token operator">-</span>ef<span class="token operator">|</span>grep java  #查看带Java的进程
-kill  pid
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">preHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//拦截规则，从session中获取用户信息</span>
+        User user <span class="token operator">=</span> <span class="token punctuation">(</span>User<span class="token punctuation">)</span> request<span class="token punctuation">.</span><span class="token function">getSession</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//判断用户是否为空</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">==</span> user<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            response<span class="token punctuation">.</span><span class="token function">sendRedirect</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getContextPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">postHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> ModelAndView modelAndView<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">afterCompletion</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> Exception ex<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>3 重启服务  reboot.sh</p>
-<pre class=" language-java"><code class="language-java">#<span class="token operator">!</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
-echo stop application
-source stop<span class="token punctuation">.</span>sh
-echo start application
-source startup<span class="token punctuation">.</span>sh
+<p>要拦截的请求</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*
+ * 类上有@Configuration，表示这个类为配置类，表示是一个xml配置文件
+ * */</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SystemConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addInterceptors</span><span class="token punctuation">(</span>InterceptorRegistry registry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//定义要拦截的路径</span>
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> path <span class="token operator">=</span> <span class="token punctuation">{</span>
+                <span class="token string">"/emp/**"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        registry<span class="token punctuation">.</span><span class="token function">addInterceptor</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">UserInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addPathPatterns</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>4 添加可执行权限</p>
-<pre class=" language-java"><code class="language-java">chmod <span class="token operator">+</span>x start<span class="token punctuation">.</span>sh
-chmod <span class="token operator">+</span>x stop<span class="token punctuation">.</span>sh
-chmod <span class="token operator">+</span>x run<span class="token punctuation">.</span>sh
-</code></pre>
-<p>5  netstat -ntpl|grep java   查看正在运行</p>
-<p>6 firewall-cmd –list-ports 防火墙开启的端口号</p>
-<h1 id="CentOS-防火墙，端口开启命令"><a href="#CentOS-防火墙，端口开启命令" class="headerlink" title="CentOS  防火墙，端口开启命令"></a>CentOS  防火墙，端口开启命令</h1><ol>
-<li><p>查看已打开的端口  # netstat -anp</p>
-</li>
-<li><p>查看想开的端口是否已开 # firewall-cmd –query-port=8003/tcp<br>  若此提示 FirewallD is not running<br>  表示为不可知的防火墙 需要查看状态并开启防火墙</p>
-</li>
-<li><p>查看防火墙状态  # systemctl status firewalld<br> running 状态即防火墙已经开启<br> dead 状态即防火墙未开启</p>
-</li>
-<li><p>开启防火墙，# systemctl start firewalld  没有任何提示即开启成功</p>
-</li>
-<li><p>开启防火墙 # service firewalld start<br>   关闭防火墙 # systemctl stop firewalld<br>   centos7.3 上述方式可能无法开启，可以先#systemctl unmask firewalld.service 然后 # systemctl start firewalld.service</p>
-</li>
-<li><p>查看想开的端口是否已开 # firewall-cmd –query-port=8003/tcp    提示no表示未开</p>
-</li>
-<li><p>开永久端口号 firewall-cmd –add-port=8003/tcp –permanent   提示    success 表示成功</p>
-</li>
-<li><p>重新载入配置  # firewall-cmd –reload    比如添加规则之后，需要执行此命令</p>
-</li>
-<li><p>再次查看想开的端口是否已开  # firewall-cmd –query-port=8003/tcp  提示yes表示成功</p>
-</li>
-<li><p>若移除端口 # firewall-cmd –permanent –remove-port=8003/tcp</p>
-</li>
-</ol>
+<p>创建Interceptor必须实现com.opensymphony.xwork2.interceptor.Interceptor接口，该接口定义了如下三个方法。</p>
+<ul>
+<li>void init():在该拦截器被实例化之后，在该拦截器执行拦截之前，系统将回调该方法。对于每个拦截器而言，其init()方法只执行一次。因此，该方法的方法体主要用于初始化资源。</li>
+<li>void destory():该方法与init()方法对应。在拦截器实例被销毁之前，系统将回调该拦截器的destory方法，该方法用于销毁在init方法里打开的资源。</li>
+<li>String intercept(ActionInvocation invocation):该方法是用户需要实现的拦截动作。就像Action的execute方法一样。intercept方法会返回一个字符串作为逻辑视图。如果该方法直接返回了一个字符串，系统会将跳转到该逻辑视图对应的实际视图资源，不会调用被拦截的Action。该方法的ActionInvocation参数包含了被拦截的Action的引用，可以通过调用该参数的invoke方法，将控制权转给下一个拦截器，或者转给Action的execute方法(如果该拦截器后没有其他拦截器，则直接执行Action的execute方法)。</li>
+</ul>
+<h2 id="Filter和Interceptor的区别"><a href="#Filter和Interceptor的区别" class="headerlink" title="Filter和Interceptor的区别"></a><strong>Filter和Interceptor的区别</strong></h2><ul>
+<li>Filter是基于函数回调的，而Interceptor则是基于Java反射的。</li>
+<li>Filter依赖于Servlet容器，而Interceptor不依赖于Servlet容器。</li>
+<li>Filter对几乎所有的请求起作用，而Interceptor只能对action请求起作用。</li>
+<li>Interceptor可以访问Action的上下文，值栈里的对象，而Filter不能。</li>
+<li>在action的生命周期里，Interceptor可以被多次调用，而Filter只能在容器初始化时调用一次。</li>
+<li><strong>拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。</strong></li>
+</ul>
 
                 
             </div>
@@ -711,7 +619,7 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Hcattt.github.io/2021/05/31/linux-yun-wei/">http://Hcattt.github.io/2021/05/31/linux-yun-wei/</a>
+                    <a href="http://Hcattt.github.io/2021/06/21/request-control/">http://Hcattt.github.io/2021/06/21/request-control/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -748,7 +656,15 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Filter/">
+                                    <span class="chip bg-color">Filter</span>
+                                </a>
+                            
+                                <a href="/tags/Interceptor/">
+                                    <span class="chip bg-color">Interceptor</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -918,17 +834,18 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/02/nginx-ru-men/">
+                <a href="/2021/06/21/request-control/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="nginx入门">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="request control">
                         
-                        <span class="card-title">nginx入门</span>
+                        <span class="card-title">request control</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -938,9 +855,59 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-02
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zhangLong
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Filter/">
+                        <span class="chip bg-color">Filter</span>
+                    </a>
+                    
+                    <a href="/tags/Interceptor/">
+                        <span class="chip bg-color">Interceptor</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/20/java-yi-chang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="java 异常">
+                        
+                        <span class="card-title">java 异常</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -952,49 +919,11 @@ chmod <span class="token operator">+</span>x run<span class="token punctuation">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/05/31/linux-yun-wei/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Linux运维">
-                        
-                        <span class="card-title">Linux运维</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            zhangLong
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
